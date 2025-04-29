@@ -1,0 +1,23 @@
+.row
+  form(action="capture", method="post", id="captureForm").valign-wrapper
+    .col.m4
+      button(type="submit").waves-effect.waves-light.btn.pink.white-text.valign Capturar
+    .col.m4
+      input(type="hidden", name="token", value=viewData.token)
+      input(type="hidden", name="buy_order", value=viewData.buyOrder)
+      input(type="hidden", name="child_buy_order", value=viewData.childBuyOrder)
+      input(type="hidden", name="authorization_code", value=viewData.authorizationCode)
+      .input-field
+        input(type="text", name="capture_amount", value=viewData.amount)
+        label(for="capture_amount") Monto a capturar
+    .col.m4
+      P
+        | Capturar la transacción para realmente capturar el dinero que habia sido previamente reservado.
+
+.fixed-action-btn
+  a.btn-floating.btn-large.pink(onclick="submitFAB();")
+    i.large.material-icons navigate_next
+script.
+  function submitFAB(){
+    document.getElementById('captureForm').submit();
+  }

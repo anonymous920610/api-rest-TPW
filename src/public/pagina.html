@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda tu hora</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1f2b3d; /* Azul oscuro legal */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h1, h3 {
+            color: #b8860b; /* Dorado */
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #1f2b3d;
+        }
+
+        input, button {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #b8860b;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            background-color: #b8860b;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+            padding: 12px;
+            width: 50%;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #8b6508;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido/a</h1>
+        <p>Gracias por ponerse en contacto con nosotros. <strong>En ICJ Abogados</strong>, entendemos la importancia de contar con un asesoramiento legal, confiable y efectivo.</p>
+        <h3><strong>Nuestro equipo especializado está comprometido en brindarle un servicio profesional, transparente y confidencial.</strong></h3>
+        <p>Le invitamos a agendar una consulta con nosotros a través de nuestra plataforma en línea, seleccionando el horario que más le convenga.</p>
+        <br>
+
+        <!-- Formulario elegante -->
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="fecha">Selecciona una fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="hora">Selecciona un horario:</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <!-- Aquí está el nuevo botón "Ir a pagar" -->
+            <button type="button" onclick="irAPago()">Ir a pagar</button>
+        </form>
+    </div>
+
+    <script>
+        function irAPago() {
+            let nombre = document.getElementById("nombre").value;
+            let email = document.getElementById("email").value;
+            let telefono = document.getElementById("telefono").value;
+            let fecha = document.getElementById("fecha").value;
+            let hora = document.getElementById("hora").value;
+
+            if (!nombre || !email || !telefono || !fecha || !hora) {
+                alert("Por favor, llena todos los campos.");
+                return;
+            }
+
+            // Aquí redireccionamos al servidor del SDK de Transbank
+            window.location.href = "http://localhost:3000/"; // Redirige a la URL del servidor de Transbank
+        }
+    </script>
+</body>
+</html>

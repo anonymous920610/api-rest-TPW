@@ -1,0 +1,20 @@
+{
+  "name": "api_rest_tpw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "nodemon": "^3.1.9",
+    "openssl": "^2.0.0",
+    "path": "^0.12.7"
+  }
+}
